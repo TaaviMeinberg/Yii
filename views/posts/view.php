@@ -31,6 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'name',
             'content:ntext',
+            'views'
         ],
     ]) ?>
     

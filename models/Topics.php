@@ -30,7 +30,7 @@ class Topics extends \yii\db\ActiveRecord
     {
         return [
             [['name'], 'required'],
-            [['owner_id', 'deleted'], 'integer'],
+            [['owner_id', 'views', 'deleted'], 'integer'],
             [['creation_time'], 'safe'],
             [['name'], 'string', 'max' => 60],
         ];
@@ -46,6 +46,7 @@ class Topics extends \yii\db\ActiveRecord
             'name' => 'Name',
             'owner_id' => 'Owner ID',
             'creation_time' => 'Creation Time',
+            'views' => 'Number of views',
             'deleted' => 'Deleted',
         ];
     }
