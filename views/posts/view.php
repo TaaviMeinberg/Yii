@@ -14,6 +14,14 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="posts-view">
 
+    <?php 
+    $id = $model->id;
+    //  Updates the view counter for the selected topic
+        $command = Yii::$app->db->createCommand('UPDATE posts SET views = views + 1 WHERE id =:postID')
+        ->bindParam(':postID', $id);
+        $command->execute();
+    ?>
+
     <h1><?= Html::encode($this->title) ?></h1>
 
    

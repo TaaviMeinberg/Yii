@@ -33,7 +33,7 @@ class Posts extends \yii\db\ActiveRecord
         return [
             [['name', 'content'], 'required'],
             [['content'], 'string'],
-            [['topic_id', 'owner_id', 'deleted'], 'integer'],
+            [['topic_id', 'owner_id', 'views', 'deleted'], 'integer'],
             [['creation_time'], 'safe'],
             [['name'], 'string', 'max' => 60],
         ];
@@ -51,6 +51,7 @@ class Posts extends \yii\db\ActiveRecord
             'topic_id' => 'Topic ID',
             'owner_id' => 'Owner ID',
             'creation_time' => 'Creation Time',
+            'views' => 'Number of views',
             'deleted' => 'Deleted',
         ];
     }

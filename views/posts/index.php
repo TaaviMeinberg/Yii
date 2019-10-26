@@ -31,6 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'content:ntext',
             'topic_id',
             'owner_id',
+            'views',
             //'creation_time',
             //'deleted',
 

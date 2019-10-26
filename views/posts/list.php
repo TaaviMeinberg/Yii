@@ -50,6 +50,11 @@ $this->params['breadcrumbs'][] = $this->title;
 				'label'=> 'Created at',
 				'format' => ['date', 'php:Y-m-d'],
 				'value' => function($model) { return $model->creation_time; },
+            ],
+            'views' => [
+				'attribute' => 'views',
+				'label'=> 'Number of views',
+				'value' => function($model) { return $model->views; },
 			],
             //'creation_time',
             //'deleted',
