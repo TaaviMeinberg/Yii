@@ -17,7 +17,7 @@ class TopicsSearch extends Topics
     public function rules()
     {
         return [
-            [['id', 'owner_id', 'deleted'], 'integer'],
+            [['id', 'owner_id', 'views','deleted'], 'integer'],
             [['name', 'creation_time'], 'safe'],
         ];
     }
@@ -61,6 +61,7 @@ class TopicsSearch extends Topics
             'id' => $this->id,
             'owner_id' => $this->owner_id,
             'creation_time' => $this->creation_time,
+            'views' => $this->views,
             'deleted' => $this->deleted,
         ]);
 

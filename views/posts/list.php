@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url ;
 use yii\grid\GridView;
+use yii\db\Query;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\PostsSearch */
@@ -14,7 +15,12 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="posts-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
+    <?php 
+    //  Updates the view counter for the selected topic
+        $command = Yii::$app->db->createCommand('UPDATE topics SET views = views + 1 WHERE id =:topicID')
+        ->bindParam(':topicID', $topicID);
+        $command->execute();
+    ?>
     <p>
         <?= Html::a('Create Posts', ['create', 'id' => $topicID], ['class' => 'btn btn-success']) ?>
     </p>

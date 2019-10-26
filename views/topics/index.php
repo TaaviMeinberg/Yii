@@ -45,7 +45,11 @@ $this->params['breadcrumbs'][] = $this->title;
 				'format' => ['date', 'php:Y-m-d'],
 				'value' => function($model) { return $model->creation_time; },
 			],
-
+			'views' => [
+				'attribute' => 'views',
+				'label'=> 'Number of views',
+				'value' => function($model) { return $model->views; },
+			],
             [
                 'class' => 'yii\grid\ActionColumn', 
                 'visible' => (Yii::$app->user->identity->permission == 2)
