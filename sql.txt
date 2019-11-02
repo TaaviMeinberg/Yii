@@ -3,6 +3,7 @@ CREATE TABLE topics(
  name varchar(60) NOT NULL,
  owner_id int NOT NULL,
  creation_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+ views INT NOT NULL DEFAULT '0',
  deleted tinyint default 0
 );
 
@@ -13,6 +14,7 @@ CREATE TABLE posts(
  topic_id int NOT NULL,
  owner_id int NOT NULL,
  creation_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+ views INT NOT NULL DEFAULT '0',
  deleted tinyint default 0
 );
 
